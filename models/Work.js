@@ -1,31 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema({
-  name: {
+const WorkSchema = new Schema({
+  artist: {
     type: String,
     required: true,
   },
-  description: {
+  album: {
     type: String,
     required: true
   },
-  cost: {
-    type: Number,
+  role: {
+    type: String,
     required: true,
-  },
-  image: {
-    type: String,
-    required: true
-  },
-  file_id: {
-    type: Number,
-    required: true
-  },
-  date: {
-    type: Date,
-    default: Date.now
   }
 });
 
-module.exports = Product = mongoose.model("product", ProductSchema);
+module.exports = Work = mongoose.model("work", WorkSchema);

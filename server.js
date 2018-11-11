@@ -37,7 +37,9 @@ if (process.env.MONGODB_URI) {
   mongoose.connect(db);
 }
 
+require("./routes/api")(app);
 require("./routes/html")(app, express, path);
+
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
