@@ -72,8 +72,9 @@
         top: 50%;
         left: 25%;
         transform: translate(-50%, -50%);
-        height: auto;
         width: 20%;
+        height: auto;
+        max-height: 260px;
         z-index: 2;
       }
       &-right {
@@ -108,17 +109,19 @@
     background: #ececec;
     z-index: 3;
     &__container {
-      padding: 65px;
-      height: 90%;
+      margin: 50px;
+      height: 80%;
       overflow-y: scroll;
       &--header {
         text-transform: uppercase;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
         text-align: center;
         font-weight: bold;
+        font-size: 16px;
       }
       &--item {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+        font-size: 14px;
         &-artist {
           font-weight: bold;
         }

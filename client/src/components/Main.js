@@ -42,13 +42,12 @@ class Main extends Component {
             />
             <video
               className="main__bg--video-left"
-              width="150"
-              height="265"
               autoPlay
               loop
               muted
+              height="10"
             >
-              <source src="/images/video-left.mp4" type="video/mp4" />
+              <source src="/images/video-left-crop.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <video className="main__bg--video-right" autoPlay loop muted>
