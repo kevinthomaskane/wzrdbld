@@ -35,15 +35,19 @@ if (process.env.MONGODB_URI) {
   mongoose.connect(db);
 }
 
+require("./routes/api")(app);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("./client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 } else {
   app.use(express.static("./client/public"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  });
 }
-
-require("./routes/api")(app);
-require("./routes/html")(app, express, path);
-
 
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
