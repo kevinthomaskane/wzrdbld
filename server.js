@@ -24,8 +24,6 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use(express.static("./client/public"));
-
 mongoose
   .connect(db)
   .then(() => console.log("mongo connected"))
@@ -35,6 +33,12 @@ if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
   mongoose.connect(db);
+}
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("./client/build"));
+} else {
+  app.use(express.static("./client/public"));
 }
 
 require("./routes/api")(app);
