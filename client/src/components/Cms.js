@@ -30,7 +30,7 @@ class Cms extends Component {
       }
     };
     axios.put("/update", obj).then(response => {
-      this.getDisc()
+      this.getDisc();
     });
   };
 
@@ -54,11 +54,11 @@ class Cms extends Component {
     });
   };
 
-  deleteItem = (id) => {
+  deleteItem = id => {
     axios.delete("/delete/" + id).then(response => {
-      this.getDisc()
-    })
-  }
+      this.getDisc();
+    });
+  };
 
   render() {
     return (
@@ -105,15 +105,9 @@ class Cms extends Component {
           </div>
           <h1 className="cms__container--header">Edit an Item</h1>
           <div className="cms__container--row">
-              <div className="cms__container--row-header">
-                Artist
-              </div>
-              <div className="cms__container--row-header">
-                Album
-              </div>
-              <div className="cms__container--row-header">
-                Role
-              </div>
+            <div className="cms__container--row-header">Artist</div>
+            <div className="cms__container--row-header">Album</div>
+            <div className="cms__container--row-header">Role</div>
           </div>
           {this.state.disc.length > 0
             ? this.state.disc.map(obj => {
