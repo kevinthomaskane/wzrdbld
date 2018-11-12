@@ -36,8 +36,8 @@ class Login extends Component {
       <div className="admin">
         <h1 className="admin__header">Admin Login</h1>
         <div className="admin__form">
-          <input type="text" className="admin__form--username" name="username" onChange={this.handleChange} value={this.state.username}/>
-          <input type="text" className="admin__form--password" name="password" onChange={this.handleChange} value={this.state.password}/>
+          <input placeholder="username" type="text" className="admin__form--username" name="username" onChange={this.handleChange} value={this.state.username}/>
+          <input placeholder="password" type="password" className="admin__form--password" name="password" onChange={this.handleChange} value={this.state.password}/>
           <button className="admin__form--button" onClick={() => {
             this.handleSubmit();
           }}>Go</button>
