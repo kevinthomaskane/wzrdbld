@@ -2,20 +2,132 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  background: #ececec;
   &__image {
     &--left {
       position: absolute;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      height: 80vh;
+      height: auto;
+      width: auto;
+      max-height: 80vh;
     }
     &--right {
       position: absolute;
       right: 0;
       top: 50%;
       transform: translateY(-50%);
-      height: 80vh;
+      height: auto;
+      width: auto;
+      max-height: 80vh;
+    }
+  }
+  &__bg {
+    width: 58%;
+    max-width: 800px;
+    max-height: 741px;
+    height: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      #home,
+      #work,
+      #merch,
+      #contact {
+        cursor: pointer;
+      }
+    }
+    &--icon-left {
+      position: absolute;
+      top: 50%;
+      left: 0px;
+      transform: translateY(-50%);
+      width: 8%;
+    }
+    &--icon-right {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 8%;
+    }
+    &--container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    &--video {
+      &-left {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 20%;
+        z-index: 2;
+      }
+      &-right {
+        position: absolute;
+        top: 50%;
+        right: 25%;
+        transform: translate(50%, -50%);
+        height: auto;
+        width: 20%;
+        z-index: 2;
+      }
+    }
+    &--painting {
+      width: 50%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+  }
+  .disc {
+    height: 75%;
+    width: 55%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid 1px black;
+    border-radius: 50px;
+    background: #ececec;
+    z-index: 3;
+    &__container {
+      padding: 65px;
+      height: 90%;
+      overflow-y: scroll;
+      &--header {
+        text-transform: uppercase;
+        padding-bottom: 30px;
+        text-align: center;
+        font-weight: bold;
+      }
+      &--item {
+        margin-bottom: 20px;
+        &-artist {
+          font-weight: bold;
+        }
+        &-album {
+          font-style: italic;
+        }
+        &-role {
+        }
+      }
     }
   }
 }

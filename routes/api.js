@@ -25,7 +25,7 @@ module.exports = app => {
       .catch(err => console.log(err));
   });
 
-  app.post("/update", (req, res) => {
+  app.put("/update", (req, res) => {
     Work.findOneAndUpdate(
       { _id: req.body.id },
       {
@@ -43,5 +43,22 @@ module.exports = app => {
         });
       })
       .catch(err => console.log(err));
+  });
+
+  app.post("/add", (req, res) => {
+    const item = new Work(req.body);
+    item
+      .save()
+      .then(item => {
+        res.json(item);
+      })
+      .catch(err => console.log(err));
+  });
+
+  app.delete("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    Work.findOneAndRemove({ _id: id }).then(removed => {
+      res.send("removed");
+    });
   });
 };

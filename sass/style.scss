@@ -1,4 +1,5 @@
 @import "main";
+@import "cms";
 
 html {
   max-width: 100%;
@@ -16,4 +17,14 @@ body {
 * {
   box-sizing: border-box;
   font-family: Courier New, Courier, monospace;
+}
+
+input,
+textarea,
+button {
+  &:focus,
+  &:active {
+    outline: none;
+    resize: none;
+  }
 }
