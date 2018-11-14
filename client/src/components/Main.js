@@ -45,7 +45,7 @@ class Main extends Component {
               Your browser does not support the video tag.
             </video>
             <video className="main__bg--video-right" autoPlay loop muted>
-              <source src="/videos/video-right.mp4" type="video/mp4" />
+              <source src="/videos/video-right-revised.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <img
