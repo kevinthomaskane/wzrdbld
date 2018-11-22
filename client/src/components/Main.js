@@ -20,6 +20,7 @@ class Main extends Component {
   };
 
   render() {
+    const fade = this.state.show_disc ? "fade-out" : "fade-in-vid"
     return (
       <div className="main">
         <img className="main__image--left" src="/images/left.png" alt="left" />
@@ -40,20 +41,20 @@ class Main extends Component {
               alt="snake"
               className="main__bg--icon-right"
             />
-            <video className="main__bg--video-left" autoPlay loop muted>
+            <video className={"main__bg--video-left " + fade} autoPlay loop muted>
               <source src="/videos/video-left-crop.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <video className="main__bg--video-right" autoPlay loop muted>
+            <video className={"main__bg--video-right " + fade} autoPlay loop muted>
               <source src="/videos/video-right-revised.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <img
-              className="main__bg--painting"
+              className={"main__bg--painting " + fade}
               src="/images/middle-painting.png"
               alt="middle"
             />
-            {this.state.show_disc ? <Disc show={this.state.show_disc} /> : null}
+            <Disc show={this.state.show_disc} />
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2024 1875.27">
               <g id="Layer_2" data-name="Layer 2">
                 <g id="Layer_1-2" data-name="Layer 1">

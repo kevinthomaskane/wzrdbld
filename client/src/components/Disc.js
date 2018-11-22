@@ -6,16 +6,22 @@ class Disc extends Component {
     disc: []
   };
 
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
     axios.get("/disc").then(disc => {
       this.setState({ disc: disc.data });
     });
   }
 
   render() {
-    if (this.props.show) {
-      return (
-        <div className="disc">
+    const fade = this.props.show ? "fade-in" : "fade-out";
+    return (
+      <div>
+        <img
+          class={"disco " + fade}
+          src="../../images/discog-bg.png"
+          alt="disco"
+        />
+        <div className={"disc " + fade}>
           <div className="disc__container">
             <div className="disc__container--header">Discography</div>
             {this.state.disc.length > 0
@@ -37,10 +43,8 @@ class Disc extends Component {
               : null}
           </div>
         </div>
-      );
-    } else {
-      return <div />;
-    }
+      </div>
+    );
   }
 }
 

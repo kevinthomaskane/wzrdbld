@@ -24,9 +24,9 @@ class Cms extends Component {
     const obj = {
       id: id,
       edits: {
-        artist: inputs[0].value.replace(/"/g, "'"),
-        album: inputs[1].value.replace(/"/g, "'"),
-        role: inputs[2].value.replace(/"/g, "'")
+        artist: inputs[0].value.replace('"', "'"),
+        album: inputs[1].value.replace('"', "'"),
+        role: inputs[2].value.replace('"', "'")
       }
     };
     axios.put("/update", obj).then(response => {
