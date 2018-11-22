@@ -91,8 +91,8 @@
       opacity: 1;
       transition: all 0.3s ease-in-out; }
   .main .disc {
-    height: 77%;
-    width: 54%;
+    height: 70%;
+    width: 52%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -127,7 +127,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    width: 550px;
+    width: 64%;
     z-index: 1;
     opacity: 0;
     transition: all 0.3s ease-in-out; }
@@ -153,6 +153,15 @@
   .main__bg {
     max-width: unset;
     width: 90vh; } }
+
+@media (min-height: 1000px) and (max-width: 1000px) {
+  .main .disc {
+    height: 560px; } }
+
+@media (min-height: 800px) and (max-width: 1292px) {
+  .main .disc {
+    height: 67%;
+    max-height: 560px; } }
 
 .cms__container {
   padding: 5%; }
