@@ -17,8 +17,8 @@ class Disc extends Component {
     return (
       <div>
         <img
-          class={"disco " + fade}
-          src="../../images/discog-bg.png"
+          className={"disco " + fade}
+          src="/images/discog-bg.png"
           alt="disco"
         />
         <div className={"disc " + fade}>
