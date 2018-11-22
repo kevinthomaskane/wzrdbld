@@ -41,10 +41,10 @@ class Main extends Component {
               alt="snake"
               className="main__bg--icon-right"
             />
-            <video className={"main__bg--video-left " + fade} src="/videos/video-left-crop.mp4" poster="/images/vid-left.png" autoPlay playsInline loop muted>
+            <video className={"main__bg--video-left " + fade} src="/videos/vid-leftv2.mp4" poster="/images/vid-left.png" autoPlay playsInline loop muted>
 
             </video>
-            <video className={"main__bg--video-right " + fade} src="/videos/video-right-shorter.mp4" poster="/images/vid-right.png" autoPlay playsInline loop muted>
+            <video className={"main__bg--video-right " + fade} src="/videos/vid-rightv2.mp4" poster="/images/vid-right.png" autoPlay playsInline loop muted>
             </video>
             <img
               className={"main__bg--painting " + fade}

@@ -181,3 +181,10 @@
     }
   }
 }
+
+@media (min-width: 1300px) {
+  .main__bg {
+    max-width: unset;
+    width: 90vh;
+  }
+}

@@ -149,6 +149,11 @@
     .main__bg .disc {
       height: 500px; } }
 
+@media (min-width: 1300px) {
+  .main__bg {
+    max-width: unset;
+    width: 90vh; } }
+
 .cms__container {
   padding: 5%; }
   .cms__container--header {
