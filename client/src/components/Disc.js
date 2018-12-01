@@ -7,13 +7,18 @@ class Disc extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    axios.get("/disc").then(disc => {
-      this.setState({ disc: disc.data });
-    });
+    if (nextProps.disc) {
+      axios.get("/disc").then(disc => {
+        this.setState({ disc: disc.data });
+      });
+    } else {
+      this.setState({ disc: [] });
+    }
   }
 
   render() {
     const fade = this.props.show ? "fade-in" : "fade-out";
+    const blank = window.innerWidth < 430 ? "_blank" : "";
     return (
       <div>
         <img
@@ -23,24 +28,43 @@ class Disc extends Component {
         />
         <div className={"disc " + fade}>
           <div className="disc__container">
-            <div className="disc__container--header">Discography</div>
-            {this.state.disc.length > 0
-              ? this.state.disc.map(el => {
-                  return (
-                    <div key={Math.random()} className="disc__container--item">
-                      <div className="disc__container--item-artist">
-                        {el.artist}
-                      </div>
-                      <div className="disc__container--item-album">
-                        {el.album}
-                      </div>
-                      <div className="disc__container--item-role">
-                        {el.role}
-                      </div>
+            <div className="disc__container--header">
+              {this.props.disc
+                ? "Discography"
+                : this.props.contact
+                ? "About"
+                : "Merch"}
+            </div>
+            {this.props.disc ? (
+              this.state.disc.map(el => {
+                return (
+                  <div key={Math.random()} className="disc__container--item">
+                    <div className="disc__container--item-artist">
+                      {el.artist}
                     </div>
-                  );
-                })
-              : null}
+                    <div className="disc__container--item-album">
+                      {el.album}
+                    </div>
+                    <div className="disc__container--item-role">{el.role}</div>
+                  </div>
+                );
+              })
+            ) : this.props.contact ? (
+              <div className="disc__container--about">
+                <div className="disc__container--item">
+                  <a
+                    href="mailto:Andy.Snape@rawpowermanagement.com"
+                    target={blank}
+                  >
+                    Contact
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <div className="disc__container--merch">
+                <div className="disc__container--item">Merch coming soon.</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
