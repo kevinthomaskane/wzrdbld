@@ -18,7 +18,6 @@ class Disc extends Component {
 
   render() {
     const fade = this.props.show ? "fade-in" : "fade-out";
-    const blank = window.innerWidth < 430 ? "_blank" : "";
     return (
       <div>
         <img
@@ -54,7 +53,6 @@ class Disc extends Component {
                 <div className="disc__container--item">
                   <a
                     href="mailto:Andy.Snape@rawpowermanagement.com"
-                    target={blank}
                   >
                     Contact
                   </a>

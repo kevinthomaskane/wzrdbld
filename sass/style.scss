@@ -1,12 +1,36 @@
 @import "main";
 @import "cms";
+@import "mobile";
+
+html {
+  overflow: hidden;
+}
 
 body {
   margin: 0;
   padding: 0;
-  min-width: 1000px;
   height: 100%;
+  .fade-in {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+  }
+  .fade-in-vid {
+    opacity: 1;
+  }
+  .fade-out {
+    opacity: 0;
+    z-index: 0;
+  }
 }
+
+// @media (max-width: 768px) {
+//   body {
+//     min-width: unset;
+//     max-width: 100%;
+//     overflow: hidden;
+//   }
+// }
 
 * {
   box-sizing: border-box;

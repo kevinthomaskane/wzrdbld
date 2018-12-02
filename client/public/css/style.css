@@ -1,5 +1,4 @@
 .main {
-  min-height: 728px;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -21,11 +20,10 @@
     width: 10%;
     max-height: 80vh; }
   .main__bg {
-    height: 95vh;
+    height: 100%;
+    width: 750px;
     max-width: 750px;
-    min-width: 750px;
     max-height: 95vh;
-    min-height: 728px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,13 +45,13 @@
     .main__bg--icon-left {
       position: absolute;
       top: 50%;
-      left: -33px;
+      left: -18px;
       transform: translateY(-50%);
       width: 8%; }
     .main__bg--icon-right {
       position: absolute;
       top: 50%;
-      right: -33px;
+      right: -18px;
       transform: translateY(-50%);
       width: 8%; }
     .main__bg--container {
@@ -90,67 +88,56 @@
       z-index: 1;
       opacity: 1;
       transition: all 0.3s ease-in-out; }
-  .main .disc {
-    height: 70%;
-    width: 54%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    border: solid 1px black;
-    border-radius: 50px;
-    background: #ececec;
-    z-index: 3;
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-    background: #ececec; }
-    .main .disc__container {
-      margin: 30px 50px;
-      height: 85%;
-      overflow-y: scroll; }
-      .main .disc__container--header {
-        text-transform: uppercase;
-        padding-bottom: 20px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 11px; }
-      .main .disc__container--item {
-        margin-bottom: 15px;
-        font-size: 10px;
-        line-height: 1.3; }
-        .main .disc__container--item-artist {
-          font-weight: bold; }
-        .main .disc__container--item-album {
-          font-style: italic; }
-  .main .disco {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 87%;
-    height: 50%;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.3s ease-in-out; }
-  .main .fade-in {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1); }
-  .main .fade-in-vid {
-    opacity: 1; }
-  .main .fade-out {
-    opacity: 0; }
 
-@media (max-width: 430px) {
-  .main__bg {
-    min-width: 650px; }
-    .main__bg--icon-left {
-      left: -28px; }
-    .main__bg--icon-right {
-      right: -28px; }
-    .main__bg .disc {
-      height: 500px; } }
+.disco {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 79%;
+  height: 42%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s ease-in-out; }
 
-@media (min-width: 1300px) {
+.disc {
+  height: 70%;
+  width: 54%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border: solid 1px black;
+  border-radius: 50px;
+  background: #ececec;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background: #ececec; }
+  .disc__container {
+    margin: 30px 50px;
+    height: 85%;
+    overflow-y: scroll; }
+    .disc__container--header {
+      text-transform: uppercase;
+      padding-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 11px; }
+    .disc__container--item {
+      margin-bottom: 15px;
+      font-size: 10px;
+      line-height: 1.3; }
+      .disc__container--item-artist {
+        font-weight: bold; }
+      .disc__container--item-album {
+        font-style: italic; }
+
+@media (max-width: 768px) {
+  .main {
+    display: none; } }
+
+@media (min-width: 768px) {
   .main__bg {
     max-width: unset;
     width: 90vh; } }
@@ -206,11 +193,96 @@
       margin-left: 92px;
       font-weight: bold; }
 
+.mobile {
+  position: relative;
+  width: 100%;
+  height: 100vh; }
+  .mobile .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1; }
+  .mobile .top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10vh;
+    width: auto; }
+  .mobile .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10vh;
+    width: auto; }
+  .mobile svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 75%; }
+
+.mobile-popup {
+  height: 80%;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border: solid 1px black;
+  border-radius: 50px;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background: #ececec;
+  overflow: hidden; }
+  .mobile-popup .container {
+    display: block;
+    width: 100%;
+    height: 95%;
+    padding: 30px;
+    padding-top: 50px;
+    overflow-y: scroll; }
+  .mobile-popup .header {
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ececec;
+    z-index: 6; }
+    .mobile-popup .header .title {
+      text-align: center;
+      display: inline-block; }
+    .mobile-popup .header .close {
+      position: absolute;
+      top: 18px;
+      right: 32px;
+      font-size: 16px; }
+
+html {
+  overflow: hidden; }
+
 body {
   margin: 0;
   padding: 0;
-  min-width: 1000px;
   height: 100%; }
+  body .fade-in {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2; }
+  body .fade-in-vid {
+    opacity: 1; }
+  body .fade-out {
+    opacity: 0;
+    z-index: 0; }
 
 * {
   box-sizing: border-box;

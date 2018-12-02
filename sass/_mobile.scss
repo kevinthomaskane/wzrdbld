@@ -1,0 +1,82 @@
+.mobile {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+  }
+  .top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10vh;
+    width: auto;
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10vh;
+    width: auto;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 75%;
+  }
+}
+.mobile-popup {
+  height: 80%;
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border: solid 1px black;
+  border-radius: 50px;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  background: #ececec;
+  overflow: hidden;
+  .container {
+    display: block;
+    width: 100%;
+    height: 95%;
+    padding: 30px;
+    padding-top: 50px;
+    overflow-y: scroll;
+  }
+  .header {
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 11px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ececec;
+    z-index: 6;
+    .title {
+      text-align: center;
+      display: inline-block;
+    }
+    .close {
+      position: absolute;
+      top: 18px;
+      right: 32px;
+      font-size: 16px;
+    }
+  }
+}

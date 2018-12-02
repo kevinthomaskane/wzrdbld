@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Disc from "./Disc";
+import Mobile from "./Mobile";
 
 class Main extends Component {
   state = {
@@ -28,7 +29,7 @@ class Main extends Component {
 
   render() {
     const fade = this.state.popup_showing ? "fade-out" : "fade-in-vid";
-    return (
+    return window.innerWidth > 768 ? (
       <div className="main">
         <img className="main__image--left" src="/images/left.png" alt="left" />
         <img
@@ -133,7 +134,7 @@ class Main extends Component {
                           show_merch: true,
                           popup_showing: true,
                           show_contact: false,
-                          show_disc: false,
+                          show_disc: false
                         });
                       }
                     }}
@@ -179,6 +180,8 @@ class Main extends Component {
           </div>
         </div>
       </div>
+    ) : (
+      <Mobile />
     );
   }
 }
