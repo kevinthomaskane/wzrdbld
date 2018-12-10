@@ -41,7 +41,8 @@
       .main__bg svg #work,
       .main__bg svg #merch,
       .main__bg svg #contact {
-        cursor: pointer; }
+        cursor: pointer;
+        stroke-width: 2px; }
     .main__bg--icon-left {
       position: absolute;
       top: 50%;
@@ -252,6 +253,7 @@
   .mobile-popup .header {
     text-transform: uppercase;
     padding: 20px;
+    padding-bottom: 15px;
     text-align: center;
     font-weight: bold;
     font-size: 12px;
