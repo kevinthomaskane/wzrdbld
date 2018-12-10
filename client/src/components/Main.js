@@ -13,7 +13,7 @@ class Main extends Component {
 
   componentWillMount(){
     const leftVideos = ['/videos/vid-leftv2.mp4', '/videos/Content3-left.mp4'];
-    const rightVideos = ['/videos/vid-rightv2.mp4', '/videos/Content3-right.mp4'];
+    const rightVideos = ['/videos/vid-rightv2.mp4', '/videos/Content3-Right.mp4'];
     const i = Math.floor(Math.random() * 2)
     this.setState({
       leftVid: leftVideos[i],
