@@ -1,6 +1,8 @@
 .cms {
   &__container {
     padding: 5%;
+    height: 100vh;
+    overflow: scroll;
     &--header {
       text-align: center;
       font-size: 26px;

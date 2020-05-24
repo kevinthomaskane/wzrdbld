@@ -3,12 +3,12 @@ import axios from "axios";
 
 class MobilePopup extends Component {
   state = {
-    disc: []
+    disc: [],
   };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.disc) {
-      axios.get("/disc").then(disc => {
+      axios.get("/disc").then((disc) => {
         this.setState({ disc: disc.data });
       });
     } else {
@@ -39,7 +39,7 @@ class MobilePopup extends Component {
             </div>
           </div>
           {this.props.disc ? (
-            this.state.disc.map(el => {
+            this.state.disc.map((el) => {
               return (
                 <div key={Math.random()} className="disc__container--item">
                   <div className="disc__container--item-artist">
@@ -54,7 +54,7 @@ class MobilePopup extends Component {
             <div className="disc__container--about">
               <div className="disc__container--item">
                 <a
-                  href="mailto:Andy.Snape@rawpowermanagement.com"
+                  href="mailto:drewrevolution@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

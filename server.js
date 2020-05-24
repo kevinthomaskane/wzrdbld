@@ -6,7 +6,7 @@ const envfile =
     : ".dev.env"; // development
 dotenv.config({
   silent: true,
-  path: `${__dirname}/${envfile}`
+  path: `${__dirname}/${envfile}`,
 });
 
 const express = require("express"),
@@ -19,20 +19,18 @@ const express = require("express"),
 
 app.use(
   bodyParser.urlencoded({
-    extended: true
+    extended: true,
   })
 );
 app.use(bodyParser.json());
 
-
-
 if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 } else {
   mongoose
-  .connect(db)
-  .then(() => console.log("mongo connected"))
-  .catch(error => console.log(error));
+    .connect(db, { useNewUrlParser: true })
+    .then(() => console.log("mongo connected"))
+    .catch((error) => console.log(error));
 }
 
 require("./routes/api")(app);
@@ -49,6 +47,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });

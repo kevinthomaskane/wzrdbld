@@ -3,12 +3,12 @@ import axios from "axios";
 
 class Disc extends Component {
   state = {
-    disc: []
+    disc: [],
   };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.disc) {
-      axios.get("/disc").then(disc => {
+      axios.get("/disc").then((disc) => {
         this.setState({ disc: disc.data });
       });
     } else {
@@ -35,7 +35,7 @@ class Disc extends Component {
                 : "Merch"}
             </div>
             {this.props.disc ? (
-              this.state.disc.map(el => {
+              this.state.disc.map((el) => {
                 return (
                   <div key={Math.random()} className="disc__container--item">
                     <div className="disc__container--item-artist">
@@ -51,11 +51,7 @@ class Disc extends Component {
             ) : this.props.contact ? (
               <div className="disc__container--about">
                 <div className="disc__container--item">
-                  <a
-                    href="mailto:Andy.Snape@rawpowermanagement.com"
-                  >
-                    Contact
-                  </a>
+                  <a href="mailto:drewrevolution@gmail.com">Contact</a>
                 </div>
               </div>
             ) : (
